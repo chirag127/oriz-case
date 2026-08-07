@@ -4,9 +4,21 @@ import SpecimenHero from '../components/SpecimenHero.astro'
 import Converter from '../components/Converter.tsx'
 import '../styles/theme.css'
 
-const title = 'oriz-case — Case & format converter'
+const site = 'https://case.oriz.in'
+const title = 'oriz-case — Free case converter: camelCase, snake_case, kebab-case · no signup'
 const desc =
-  'Convert between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title, Sentence and reformat code identifiers. 100% client-side, no upload, no signup.'
+  'Free online case converter — turn text into camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title & Sentence. 100% in-browser, no upload, no signup.'
+const ogImage = `${site}/favicon.svg`
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'oriz-case',
+  applicationCategory: 'DeveloperApplication',
+  operatingSystem: 'Web',
+  url: `${site}/`,
+  description: desc,
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+}
 ---
 
 <!doctype html>
@@ -16,14 +28,19 @@ const desc =
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={desc} />
-    <link rel="canonical" href="https://case.oriz.in/" />
+    <link rel="canonical" href={`${site}/`} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://case.oriz.in/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:url" content={`${site}/`} />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImage} />
     <meta name="theme-color" content="#0b0b0c" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="apple-touch-icon" href="/icons/icon-192.png" />
     <script src="/registerSW.js" is:inline></script>
