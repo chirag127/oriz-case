@@ -1,0 +1,36 @@
+---
+import OzToolShell from '@chirag127/oz-chrome/components/OzToolShell.astro'
+import SpecimenHero from '../components/SpecimenHero.astro'
+import Converter from '../components/Converter.tsx'
+import '../styles/theme.css'
+
+const title = 'oriz-case — Case & format converter'
+const desc =
+  'Convert between camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title, Sentence and reformat code identifiers. 100% client-side, no upload, no signup.'
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href="https://case.oriz.in/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://case.oriz.in/" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <OzToolShell site="case" title="Case &amp; format converter" wordmarkHref="https://oriz.in">
+      <a slot="nav" href="https://github.com/chirag127/oriz-case" rel="noopener">source</a>
+      <SpecimenHero />
+      <Converter client:load />
+      <a slot="footer" href="https://github.com/chirag127/oriz-case" rel="noopener">GitHub</a>
+      <span slot="footer">100% client-side · no upload · no signup</span>
+    </OzToolShell>
+  </body>
+</html>

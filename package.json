@@ -1,0 +1,36 @@
+{
+  "name": "oriz-case",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Case & format converter for devs/writers — camelCase, snake_case, kebab-case, PascalCase, CONSTANT_CASE, Title, Sentence + code-identifier reformatting. 100% client-side.",
+  "license": "MIT",
+  "author": "Chirag Singhal",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "test": "vitest run",
+    "deploy": "astro build && wrangler pages deploy dist --project-name oriz-case --branch main --commit-dirty=true"
+  },
+  "dependencies": {
+    "@astrojs/react": "^5.0.5",
+    "@astrojs/sitemap": "^3.6.0",
+    "@chirag127/oz-ai": "file:../design-system/packages/oz-ai",
+    "@chirag127/oz-chrome": "file:../design-system/packages/oz-chrome",
+    "@chirag127/oz-file": "file:../design-system/packages/oz-file",
+    "@chirag127/oz-tokens-base": "file:../design-system/packages/oz-tokens-base",
+    "@fontsource-variable/archivo": "^5.3.0",
+    "@fontsource-variable/space-grotesk": "^5.2.6",
+    "@tailwindcss/vite": "^4.1.11",
+    "astro": "^6.4.8",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.42.0"
+  }
+}
