@@ -1,0 +1,73 @@
+# oriz-case — full content
+
+Case & format converter for devs and writers. One box in, every case out. 100% client-side — text never leaves your browser. No upload, no signup, no tracking, free.
+
+Live app: https://case.oriz.in
+Source: https://github.com/chirag127/oriz-case
+About/info: https://chirag127.github.io/oriz-case/
+
+## What it is
+
+oriz-case takes any text or code identifier and instantly renders it in 16 cases at once. Type, paste, or drop a file; every card updates live; copy any result with one click. Built for developers renaming variables and writers normalising titles.
+
+## The 16 case transforms
+
+Every transform runs on a zero-dep tokenizer that splits any input — camelCase, snake_case, kebab-case, spaces, acronyms (HTTPServer → HTTP Server), letter/number boundaries (v2Model → v2 Model) — into words, then rebuilds.
+
+- camelCase — JS/TS variables, JSON keys. Example: getUserProfile.
+- PascalCase — classes, types, React components. Example: GetUserProfile.
+- snake_case — Python, Ruby, SQL. Example: get_user_profile.
+- CONSTANT_CASE — env vars, constants. Example: GET_USER_PROFILE.
+- kebab-case — URLs, CSS, filenames. Example: get-user-profile.
+- COBOL-CASE — HTTP headers, COBOL. Example: GET-USER-PROFILE.
+- dot.case — namespaces, config keys. Example: get.user.profile.
+- path/case — file paths, routes. Example: get/user/profile.
+- space case — plain words. Example: get user profile.
+- Title Case — headings, titles (short words stay lower unless first/last). Example: Get User Profile.
+- Sentence case — prose; first word capitalised, rest lower. Example: Get user profile.
+- lowercase — all lower.
+- UPPERCASE — all upper.
+- Capitalize Words — each word capped.
+- StUdLyCaPs — the meme, alternating caps.
+- iNVERSE cASE — flip every letter's case.
+
+## Conversion modes
+
+- Per line — convert a list of identifiers line-by-line. Default. Paste many names, get each converted independently.
+- Whole block — treat the entire input as one string to convert.
+
+## File input
+
+Drag-drop or pick a text file. Accepts .txt, .md, .csv, .json, .js, .ts, .py and any text/* type. File is read in-browser via @chirag127/oz-file; nothing is uploaded.
+
+## Slug + handle generators
+
+- Slugify — ASCII URL slug: lowercase, hyphen-joined, diacritics stripped (NFKD normalize + combining-mark removal).
+- Handleify — social handle: lowercase alphanumeric + underscores, max 30 chars, no trailing separators.
+- Reformat identifier — batch-convert code identifiers between camel/pascal/snake/kebab.
+
+## Optional AI naming assistant
+
+Two modes, both powered by @chirag127/oz-ai (g4f multi-provider failover, no API key):
+
+- Name a variable — describe what a value holds (e.g. "list of overdue invoices for a user") and get camelCase or snake_case name suggestions as copyable chips.
+- Prose to slug — paste a title or sentence, get a clean URL slug.
+
+AI is polish only. If every provider is unreachable, a status message says so and the core converter above keeps working fully offline. The AI call is the ONLY network request the app ever makes, and only when you explicitly trigger it.
+
+## Privacy
+
+Everything runs in your browser. Text never leaves the page — no server, no API key, no analytics. The only network call is the optional AI feature, triggered explicitly by you.
+
+## Tech
+
+- Astro (static output) with React 19 islands.
+- Tailwind v4.
+- Zero-dependency transform core (src/lib/cases.ts, slug.ts) — pure functions, unit-tested with Vitest.
+- Shared @chirag127/oz-* packages: oz-chrome (tool shell), oz-tokens-base (design token contract), oz-file (in-browser file reading), oz-ai (keyless g4f AI).
+- PWA-installable, offline-capable.
+- Bespoke type-specimen visual identity: stark editorial black & white plus one signal red, Swiss grid, Archivo display / Space Grotesk body, rotating giant case-transform hero letters.
+
+## License
+
+MIT (c) 2026 Chirag Singhal.

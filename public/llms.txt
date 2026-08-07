@@ -1,0 +1,21 @@
+# oriz-case
+
+> Case & format converter for devs and writers. One box in, every case out — camelCase, PascalCase, snake_case, CONSTANT_CASE, kebab-case, COBOL-CASE, dot.case, path/case, Title Case, Sentence case + more. 100% client-side: no upload, no signup, no tracking. Live at https://case.oriz.in.
+
+## Core
+
+- [Live app](https://case.oriz.in): the converter — type/paste/drop text, see 16 case transforms live, copy any with one click.
+- [Source (GitHub)](https://github.com/chirag127/oriz-case): MIT, Astro static + React 19 islands, zero-dep transform core.
+- [About / info page](https://chirag127.github.io/oriz-case/): what the project is, features, tech.
+
+## Features
+
+- [16 case transforms](https://case.oriz.in): camelCase, PascalCase, snake_case, CONSTANT_CASE, kebab-case, COBOL-CASE, dot.case, path/case, space case, Title Case, Sentence case, lowercase, UPPERCASE, Capitalize Words, StUdLyCaPs, iNVERSE cASE.
+- [Per-line or whole-block mode](https://case.oriz.in): convert a list of identifiers line-by-line, or one blob at once.
+- [File input](https://case.oriz.in): drag-drop or pick a text file (.txt/.md/.csv/.json/.js/.ts/.py).
+- [Slug + handle generators](https://case.oriz.in): URL slugs + social handles, diacritics stripped.
+- [Optional AI naming](https://case.oriz.in): suggest a variable/function name from a description, or turn prose into a clean URL slug — powered by @chirag127/oz-ai (g4f multi-provider, no key). Polish only; converter works fully offline.
+
+## Full content
+
+- [llms-full.txt](https://case.oriz.in/llms-full.txt): complete site text as clean markdown for LLM ingestion.
